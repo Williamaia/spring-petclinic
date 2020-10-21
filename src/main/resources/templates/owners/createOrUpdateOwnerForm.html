@@ -17,6 +17,15 @@
       <input
         th:replace="~{fragments/inputField :: input ('Telephone', 'telephone', 'text')}" />
     </div>
+    
+    <label class="col-sm-2 control-label" th:text="Status"></label>
+      <div class="col-sm-2">
+        <select class="form-control" name="ativo">
+          <option th:selected="${!owner['new']} ? false : ${owner.ativo}"  th:value="true" th:text="Ativo"></option>
+          <option th:selected="${!owner['new']} ? false : ${!owner.ativo}" th:value="false" th:text="Inativo"></option>
+        </select>
+      </div>
+    </div>
 
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
