@@ -25,6 +25,10 @@
               <td th:text="${owner.city}"></td>
               <td th:text="${owner.telephone}"></td>
               <td><span th:each="pet : ${owner.pets}" th:text="${pet.name} "></td>  
+              <td>
+                <span th:if="${owner.ativo}" class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                <span th:if="${!owner.ativo}" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+              </td>
           </tr>
         </tbody>
     </table>
