@@ -26,6 +26,13 @@
         <th>Telephone</th>
         <td th:text="*{telephone}"></td>
       </tr>
+      <tr>
+        <th>Status</th>
+        <td>
+          <span th:if="${owner.ativo}" class="glyphicon glyphicon-ok " aria-hidden="true" style="color:green;"></span>
+          <span th:if="${!owner.ativo}" class="glyphicon glyphicon-remove" aria-hidden="true" style="color:red;"></span>
+        </td>
+      </tr>
     </table>
   
     <a th:href="@{{id}/edit(id=${owner.id})}" class="btn btn-default">Edit
